@@ -12,7 +12,7 @@ The API must:
   * Accept a venue ID, start date, and end date.
   * Use Open-Meteo's historical weather API to fetch hourly weather data for the specified range and location.
   * Extract 10+ parameters (e.g., temperature, precipitation, snowfall, etc.).
-  * Store the data in a cloud-hosted database.
+  * Store the data in a ~~cloud-hosted~~ local database.
   * Return success or error responses accordingly.
 
 Design the database schema for storing the weather data.
