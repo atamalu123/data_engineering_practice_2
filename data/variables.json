@@ -1,0 +1,16 @@
+{
+    "venue_id": "TEXT",
+    "ts_utc": "TEXT",
+    "temperature_2m": "REAL",
+    "relative_humidity_2m": "REAL",
+    "dewpoint_2m": "REAL",
+    "apparent_temperature": "REAL",
+    "precipitation": "REAL",
+    "rain": "REAL",
+    "snowfall": "REAL",
+    "cloudcover": "REAL",
+    "pressure_msl": "REAL",
+    "surface_pressure": "REAL",
+    "wind_speed_10m": "REAL",
+    "wind_gusts_10m": "REAL"
+}
