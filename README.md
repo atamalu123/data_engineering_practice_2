@@ -16,8 +16,11 @@ The API must:
   * Return success or error responses accordingly.
 
 Design the database schema for storing the weather data.
+
 Deploy locally - (`weather.db`)
+
 Include a README with setup instructions - (current file)
+
 Implement QA checks in SQL for data consistency - (run in `main.py`)
 
 ## Main.py summary
