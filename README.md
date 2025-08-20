@@ -2,7 +2,7 @@
 
 Adapted from [here](https://www.reddit.com/r/dataengineering/comments/1jy09o8/is_this_takehome_assignment_too_large_and_complex/).
 
-No setup required, just download and run `main.py`. For testing, try deleting different files in `/data/` or adding to `variables.json`.
+No setup required, just download and run `/app/main.py`. For testing, try deleting different files in `/data/` or editing `/data/request.json` and `/data/variables.json`.
 
 # Assignment Summary
 
@@ -15,12 +15,18 @@ The API must:
   * Store the data in a cloud-hosted database.
   * Return success or error responses accordingly.
 
-* Design the database schema for storing the weather data.
-* Use OpenAPI 3.0 to document the API.
-* Deploy locally
-* ~~Set up CI/CD pipeline for the solution.~~ not done yet
-* Include a README with setup instructions (current file)
-* ~~Implement QA checks in SQL for data consistency.~~ not done yet
+Design the database schema for storing the weather data.
+Deploy locally - (`weather.db`)
+Include a README with setup instructions - (current file)
+Implement QA checks in SQL for data consistency - (run in `main.py`)
+
+## Main.py summary
+
+1. Checks if SQLite database exists, writes one if it doesn't exist
+2. Simulates processing a request and validating the request
+3. Retrieves data from Open-Meteo API
+4. Export data to `weather.db` database
+5. SQL QA tests
 
 # Files
 
@@ -38,3 +44,6 @@ The API must:
   * `venues.csv` - used to simulate SQL table holding information of all venues
   * `weather.db` - SQLite server to get data from 
 
+## Other files
+
+  * `schema.md` - a mock SQL schema describing the tables

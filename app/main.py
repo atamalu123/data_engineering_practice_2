@@ -3,9 +3,8 @@ import requests_cache
 from retry_requests import retry
 import pandas as pd
 from read_write_sql import generate_sql_table, copy_merge_weather_df, count_sql_table_rows
-from data_validation import is_request_valid, is_latitude_valid, is_longitude_valid
+from data_validation import is_request_valid, is_latitude_valid, is_longitude_valid, run_qa_checks
 from read_data import read_json, read_venues
-# Optional: replace print() with logging.info()
 
 ##### 1. Ensure SQLite Database exists, if not, write one -----
 
@@ -117,7 +116,11 @@ print(f"Number of rows before adding to {TABLE_NAME}: {num_rows_before}")
 num_rows_written = copy_merge_weather_df(df, WRITE_VARIABLES, venue_id, CONFLICT_VARIABLES, TABLE_NAME, "data/weather.db")
 num_rows_after = count_sql_table_rows("../data/weather.db", TABLE_NAME)
 
+##### 5. QA testing -----
+
 if num_rows_after > num_rows_before:
     print(f"Successfully wrote {num_rows_written} rows to {TABLE_NAME}")
 else:
     print(f"Did not write additional rows to {TABLE_NAME}")
+
+print(run_qa_checks("data/weather.db", TABLE_NAME))

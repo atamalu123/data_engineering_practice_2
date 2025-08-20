@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 """
-Builds paths relative to the script file for best practice
+Ensures request json data exists and opens it
 """
 def read_json(file_path: str) -> dict:
     request_data = {} # request data for same return
@@ -18,6 +18,9 @@ def read_json(file_path: str) -> dict:
     except json.JSONDecodeError:
         print(f"Error: Could not decode JSON from {full_path}")
 
+"""
+Ensures venues csv exists and opens it
+"""
 def read_venues(file_path: str) -> pd.DataFrame:
     df = pd.DataFrame() # blank df for safe return
     try:
